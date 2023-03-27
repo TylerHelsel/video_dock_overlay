@@ -93,7 +93,7 @@ class videoOverlayData{
 Hooks.on('renderCameraViews', (playerList, html) => {
     // find the element which has our logged in user's id
     const loggedInUserListItem = html.find(`[data-user="${game.userId}"]`)
-    const cameraNameBanner = html.find(`[player-name noborder noanimate]`)
+    const cameraNameBanner = html.find("player-name noborder noanimate")
 
     console.log("DATA HERE")
     console.log(loggedInUserListItem)
