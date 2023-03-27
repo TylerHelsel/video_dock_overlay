@@ -21,5 +21,6 @@
         }
     ],
     "verison": "1",
-    "minimumCoreVersion": "10.291"
+    "minimumCoreVersion": "10.291",
+    "manifest": "https://raw.githubusercontent.com/TylerHelsel/video_dock_overlay/master/module.json"
 }
