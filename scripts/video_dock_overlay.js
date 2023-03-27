@@ -95,10 +95,12 @@ Hooks.on('renderCameraViews', (playerList, html) => {
     const loggedInUserListItem = html.find(`[data-user="${game.userId}"]`)
     const cameraNameBanner = html.find("player-name noborder noanimate")
 
+    cameraNameBanner.remove(".player-name noborder noanimate")
+
     console.log("DATA HERE")
     console.log(loggedInUserListItem)
     console.log(cameraNameBanner)
-    
+  
     // insert a button at the end of this element
     loggedInUserListItem.append(
       "<button type='button' class='todo-list-icon-button'><i class='fas fa-tasks'></i></button>"
