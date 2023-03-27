@@ -20,8 +20,8 @@
             "path": "languages/en.json"
         }
     ],
-    "verison": "1",
+    "version": "1",
     "minimumCoreVersion": "10.291",
     "manifest": "https://raw.githubusercontent.com/TylerHelsel/video_dock_overlay/master/module.json",
-    "download": "https://github.com/TylerHelsel/video_dock_overlay/archive/refs/tags/removeNameData6.zip"
+    "download": "https://github.com/TylerHelsel/video_dock_overlay/archive/refs/tags/updateTest.zip"
 }
