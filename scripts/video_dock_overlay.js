@@ -101,7 +101,7 @@ Hooks.on('renderCameraViews', (playerList, html) => {
     // find the element which has our logged in user's id
     const loggedInUserListItem = html.find(`[data-user="${game.userId}"]`)
     
-    removeShit();
+    videoOverlayData.removeShit();
 
     console.log("DATA HERE")
     console.log(loggedInUserListItem)
