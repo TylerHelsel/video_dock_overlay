@@ -6,6 +6,8 @@
  * @property {string} overlayPath - File path to the overlay image
  */
 
+//Relevant HOOK: renderCameraViews
+
 console.log('video_dock_overlay | Hello World!');
 
 class VideoOverlay {
@@ -87,3 +89,13 @@ class videoOverlayData{
 
     }
 }
+
+Hooks.on('renderPlayerList', (playerList, html) => {
+    // find the element which has our logged in user's id
+    const loggedInUserListItem = html.find(`[data-user-id="${game.userId}"]`)
+    
+    // insert a button at the end of this element
+    loggedInUserListItem.append(
+      "<button type='button' class='todo-list-icon-button'><i class='fas fa-tasks'></i></button>"
+    );
+  });
