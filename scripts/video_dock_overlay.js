@@ -88,13 +88,17 @@ class videoOverlayData{
         return game.users.get(relevantOverlay.userId)?.setFlag(VideoOverlay.ID, VideoOverlay.FLAGS.OVERLAYS, keyDeletion)
 
     }
+
+    static removeShit(){
+        document.getElementsByClassName("player-name noborder noanimate").remove();
+    }
 }
 
 Hooks.on('renderCameraViews', (playerList, html) => {
     // find the element which has our logged in user's id
     const loggedInUserListItem = html.find(`[data-user="${game.userId}"]`)
     const cameraNameBanner = html.find("player-name noborder noanimate")
-
+    
     cameraNameBanner.remove("player-name noborder noanimate")
 
     console.log("DATA HERE")
