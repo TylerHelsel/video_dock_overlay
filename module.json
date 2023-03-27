@@ -1,7 +1,7 @@
 {
     "name": "video_dock_overlay",
     "title": "Video Dock Overlay",
-    "description": "A module to allow overlays on camera feeds in the video dock",
+    "description": "A module to allow overlays on camera feeds in the video dock@@",
     "authors": [
         {
             "name": "Tyler Helsel"
