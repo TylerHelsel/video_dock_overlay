@@ -1,0 +1,25 @@
+{
+    "name": "video_dock_overlay",
+    "title": "Video Dock Overlay",
+    "description": "A module to allow overlays on camera feeds in the video dock",
+    "authors": [
+        {
+            "name": "Tyler Helsel"
+        }       
+    ],
+    "scripts":[
+        "scripts/video_dock_overlay.js"
+    ],
+    "styles": [
+        "styles/video_dock_overlay.css"
+    ],
+    "languages":[
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        }
+    ],
+    "verison": "1",
+    "minimumCoreVersion": "10.291"
+}
