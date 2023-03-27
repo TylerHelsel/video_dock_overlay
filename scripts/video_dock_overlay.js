@@ -90,23 +90,25 @@ class videoOverlayData{
     }
 
     static removeShit(){
-        document.getElementsByClassName("player-name noborder noanimate").remove();
+        document.getElementsByClassName("player-name noborder noanimate")[0].remove();
+        document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
+        document.getElementsByClassName("notification-bar right flexcol")[0].remove();
+        document.getElementsByClassName("shadow")[0].remove();
     }
 }
 
 Hooks.on('renderCameraViews', (playerList, html) => {
     // find the element which has our logged in user's id
     const loggedInUserListItem = html.find(`[data-user="${game.userId}"]`)
-    const cameraNameBanner = html.find("player-name noborder noanimate")
     
-    cameraNameBanner.remove("player-name noborder noanimate")
+    removeShit();
 
     console.log("DATA HERE")
     console.log(loggedInUserListItem)
     console.log(cameraNameBanner)
   
     // insert a button at the end of this element
-    loggedInUserListItem.append(
-      "<button type='button' class='todo-list-icon-button'><i class='fas fa-tasks'></i></button>"
-    );
+    //loggedInUserListItem.append(
+    //  "<button type='button' class='todo-list-icon-button'><i class='fas fa-tasks'></i></button>"
+    //);
   });
