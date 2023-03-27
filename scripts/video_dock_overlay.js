@@ -93,7 +93,9 @@ class videoOverlayData{
 Hooks.on('renderCameraViews', (playerList, html) => {
     // find the element which has our logged in user's id
     const loggedInUserListItem = html.find(`[data-user="${game.userId}"]`)
+    console.log("***********************************************")
     console.log(loggedInUserListItem)
+    console.log("***********************************************")
     
     // insert a button at the end of this element
     loggedInUserListItem.append(
