@@ -10,26 +10,52 @@
 
 console.log('video_dock_overlay | Hello World!');
 
-var listOfPlayers;
-
-function renderOverlay(){
+function renderOverlay(listOfPlayers){
     let p = document.createElement("img")
     p.src = "overlayImages/testFrame2.png" 
     p.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;" 
     playerListLength = listOfPlayers.length;
     for (let i = 0; i < playerListLength; i++) {
         if (document.getElementsByClassName("camera-view camera-box-dock no-audio")[i] != undefined){
-            document.getElementsByClassName("player-name noborder noanimate")[i].remove();
-            document.getElementsByClassName("notification-bar right flexcol")[i].remove();
-            document.getElementsByClassName("shadow")[i].remove();
+            if(document.getElementsByClassName("player-name noborder noanimate")[0] != undefined){
+                document.getElementsByClassName("player-name noborder noanimate")[0].remove();
+            }else if(document.getElementsByClassName("player-name noborder")[0] != undefined){
+                document.getElementsByClassName("player-name noborder")[0].remove();
+            }    
+            document.getElementsByClassName("notification-bar right flexcol")[0].remove();
+            document.getElementsByClassName("shadow")[0].remove();
             document.getElementsByClassName("camera-view camera-box-dock no-audio")[i].style.padding = "0" 
             document.getElementsByClassName("camera-view camera-box-dock no-audio")[i].appendChild(p)
         }else if (document.getElementsByClassName("camera-view camera-box-popout no-audio")[i] != undefined){
-            document.getElementsByClassName("player-name noborder noanimate")[i].remove();
-            document.getElementsByClassName("notification-bar right flexcol")[i].remove();
-            document.getElementsByClassName("shadow")[i].remove();
+            if(document.getElementsByClassName("player-name noborder noanimate")[0] != undefined){
+                document.getElementsByClassName("player-name noborder noanimate")[0].remove();
+            }else if(document.getElementsByClassName("player-name noborder")[0] != undefined){
+                document.getElementsByClassName("player-name noborder")[0].remove();
+            }
+            document.getElementsByClassName("notification-bar right flexcol")[0].remove();
+            document.getElementsByClassName("shadow")[0].remove();
             document.getElementsByClassName("camera-view camera-box-popout no-audio")[i].style.padding = "0"
             document.getElementsByClassName("camera-view camera-box-popout no-audio")[i].appendChild(p)
+        }else if (document.getElementsByClassName("camera-view camera-box-popout no video no-audio")[i] != undefined){
+            if(document.getElementsByClassName("player-name noborder noanimate")[0] != undefined){
+                document.getElementsByClassName("player-name noborder noanimate")[0].remove();
+            }else if(document.getElementsByClassName("player-name noborder")[0] != undefined){
+                document.getElementsByClassName("player-name noborder")[0].remove();
+            }
+            document.getElementsByClassName("notification-bar right flexcol")[0].remove();
+            document.getElementsByClassName("shadow")[0].remove();
+            document.getElementsByClassName("camera-view camera-box-popout no video no-audio")[i].style.padding = "0"
+            document.getElementsByClassName("camera-view camera-box-popout no video no-audio")[i].appendChild(p)
+        }else if (document.getElementsByClassName("camera-view camera-box-dock no video no-audio")[i] != undefined){
+            if(document.getElementsByClassName("player-name noborder noanimate")[0] != undefined){
+                document.getElementsByClassName("player-name noborder noanimate")[0].remove();
+            }else if(document.getElementsByClassName("player-name noborder")[0] != undefined){
+                document.getElementsByClassName("player-name noborder")[0].remove();
+            }
+            document.getElementsByClassName("notification-bar right flexcol")[0].remove();
+            document.getElementsByClassName("shadow")[0].remove();
+            document.getElementsByClassName("camera-view camera-box-dock no video no-audio")[i].style.padding = "0"
+            document.getElementsByClassName("camera-view camera-box-dock no video no-audio")[i].appendChild(p)
         }
     }
 }
@@ -127,7 +153,8 @@ class videoOverlayData{
 }
 
 Hooks.on('renderCameraViews', (playerList, html) => {
-    renderOverlay();
+    var listOfPlayers = Array.from(game.users.keys())
+    renderOverlay(listOfPlayers);
     /*
     document.getElementsByClassName("player-name noborder noanimate")[0].remove();
     document.getElementsByClassName("notification-bar right flexcol")[0].remove();
@@ -147,8 +174,8 @@ Hooks.on('renderCameraViews', (playerList, html) => {
     */   
   })
 
-Hooks.on('pf2e.systemReady', (playerList, html) => {
-    listOfPlayers = Array.from(game.users.keys())
-})
+//Hooks.on('pf2e.systemReady', (playerList, html) => {
+//    listOfPlayers = Array.from(game.users.keys())
+//})
 
  
