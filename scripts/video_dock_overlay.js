@@ -126,7 +126,7 @@ Hooks.on('renderCameraViews', (playerList, html) => {
     }    
   })
 
-Hooks.on('setup', (playerList, html) => {
+Hooks.on('pf2e.systemReady', (playerList, html) => {
     listOfPlayers = Array.from(game.users.keys())
     console.log("ListOfPlayers")
     console.log(listOfPlayers)
