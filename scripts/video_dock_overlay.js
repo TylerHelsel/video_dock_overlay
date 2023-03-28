@@ -10,6 +10,12 @@
 
 console.log('video_dock_overlay | Hello World!');
 
+var playerList;
+
+function renderOverlay(){
+
+}
+
 class VideoOverlay {
     //This must match the name in module.json
     static ID = 'video_dock_overlay';
@@ -103,8 +109,11 @@ class videoOverlayData{
 }
 
 Hooks.on('renderCameraViews', (playerList, html) => {
+
+    console.log("***********************************");
+    console.log(playerList);
+
     document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-    
     document.getElementsByClassName("notification-bar right flexcol")[0].remove();
     document.getElementsByClassName("shadow")[0].remove();
 
