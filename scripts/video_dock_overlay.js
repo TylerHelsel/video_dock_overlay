@@ -90,7 +90,7 @@ class videoOverlayData{
     }
 }
 
-export function setUpOverlay(){
+function setUpOverlay(){
     document.getElementsByClassName("player-name noborder noanimate")[0].remove();
     document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
     document.getElementsByClassName("notification-bar right flexcol")[0].remove();
