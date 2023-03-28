@@ -88,27 +88,28 @@ class videoOverlayData{
         return game.users.get(relevantOverlay.userId)?.setFlag(VideoOverlay.ID, VideoOverlay.FLAGS.OVERLAYS, keyDeletion)
 
     }
-
-    static removeShit(){
-        document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-        document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
-        document.getElementsByClassName("notification-bar right flexcol")[0].remove();
-        document.getElementsByClassName("shadow")[0].remove();
-    }
 }
+
+export function setUpOverlay(){
+    document.getElementsByClassName("player-name noborder noanimate")[0].remove();
+    document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
+    document.getElementsByClassName("notification-bar right flexcol")[0].remove();
+    document.getElementsByClassName("shadow")[0].remove();
+
+    let p = document.createElement("img")
+    p.src = "overlayImages/testFrame2.png" 
+    p.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;" 
+    document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].appendChild(p)
+};
+
 
 Hooks.on('renderCameraViews', (playerList, html) => {
     // find the element which has our logged in user's id
-    const loggedInUserListItem = html.find(`[data-user="${game.userId}"]`)
     
-    videoOverlayData.removeShit();
-
-    console.log("DATA HERE")
-    console.log(loggedInUserListItem)
-    console.log(cameraNameBanner)
+    setUpOverlay()
   
     // insert a button at the end of this element
     //loggedInUserListItem.append(
     //  "<button type='button' class='todo-list-icon-button'><i class='fas fa-tasks'></i></button>"
     //);
-  });
+  })
