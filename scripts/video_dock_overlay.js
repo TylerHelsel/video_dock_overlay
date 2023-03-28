@@ -88,25 +88,25 @@ class videoOverlayData{
         return game.users.get(relevantOverlay.userId)?.setFlag(VideoOverlay.ID, VideoOverlay.FLAGS.OVERLAYS, keyDeletion)
 
     }
+
+    static setUpOverlay(){
+        document.getElementsByClassName("player-name noborder noanimate")[0].remove();
+        document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
+        document.getElementsByClassName("notification-bar right flexcol")[0].remove();
+        document.getElementsByClassName("shadow")[0].remove();
+    
+        let p = document.createElement("img")
+        p.src = "overlayImages/testFrame2.png" 
+        p.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;" 
+        document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].appendChild(p)
+    };
 }
-
-function setUpOverlay(){
-    document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-    document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
-    document.getElementsByClassName("notification-bar right flexcol")[0].remove();
-    document.getElementsByClassName("shadow")[0].remove();
-
-    let p = document.createElement("img")
-    p.src = "overlayImages/testFrame2.png" 
-    p.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;" 
-    document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].appendChild(p)
-};
-
 
 Hooks.on('renderCameraViews', (playerList, html) => {
     // find the element which has our logged in user's id
     
-    setUpOverlay()
+    videoOverlay = videoOverlayData.createOverlay(game.userId, {label: 'Foo'})
+    videoOverlay.setUpOverlay();
   
     // insert a button at the end of this element
     //loggedInUserListItem.append(
