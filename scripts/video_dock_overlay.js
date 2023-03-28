@@ -10,7 +10,7 @@
 
 console.log('video_dock_overlay | Hello World!');
 
-var playerList;
+var listOfPlayers;
 
 function renderOverlay(){
 
@@ -109,10 +109,6 @@ class videoOverlayData{
 }
 
 Hooks.on('renderCameraViews', (playerList, html) => {
-
-    console.log("***********************************");
-    console.log(playerList);
-
     document.getElementsByClassName("player-name noborder noanimate")[0].remove();
     document.getElementsByClassName("notification-bar right flexcol")[0].remove();
     document.getElementsByClassName("shadow")[0].remove();
@@ -129,3 +125,11 @@ Hooks.on('renderCameraViews', (playerList, html) => {
         document.getElementsByClassName("camera-view camera-box-popout no-audio")[0].appendChild(p)
     }    
   })
+
+Hooks.on('setup', (playerList, html) => {
+    listOfPlayers = Array.from(game.users.keys())
+    console.log("ListOfPlayers")
+    console.log(listOfPlayers)
+})
+
+ 

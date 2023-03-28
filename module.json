@@ -20,8 +20,8 @@
             "path": "languages/en.json"
         }
     ],
-    "version": "1.0.4",
+    "version": "1.0.5",
     "minimumCoreVersion": "10.291",
     "manifest": "https://raw.githubusercontent.com/TylerHelsel/video_dock_overlay/master/module.json",
-    "download": "https://github.com/TylerHelsel/video_dock_overlay/archive/refs/tags/dataTest.zip"
+    "download": "https://github.com/TylerHelsel/video_dock_overlay/archive/refs/tags/dataTest2.zip"
 }
