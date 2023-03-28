@@ -104,7 +104,7 @@ class videoOverlayData{
 
 Hooks.on('renderCameraViews', (playerList, html) => {
     document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-    document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
+    
     document.getElementsByClassName("notification-bar right flexcol")[0].remove();
     document.getElementsByClassName("shadow")[0].remove();
 
@@ -113,8 +113,10 @@ Hooks.on('renderCameraViews', (playerList, html) => {
     p.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;" 
 
     if (document.getElementsByClassName("camera-view camera-box-dock no-audio")[0] != undefined){
+        document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
         document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].appendChild(p)
     }else if (document.getElementsByClassName("camera-view camera-box-popout no-audio")[0] != undefined){
+        document.getElementsByClassName("camera-view camera-box-popout no-audio")[0].style.padding = "0"
         document.getElementsByClassName("camera-view camera-box-popout no-audio")[0].appendChild(p)
     }    
   })
