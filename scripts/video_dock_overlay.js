@@ -103,11 +103,6 @@ class videoOverlayData{
 }
 
 Hooks.on('renderCameraViews', (playerList, html) => {
-    // find the element which has our logged in user's id
-    
-    //videoOverlay = videoOverlayData.createOverlay(game.userId, {label: 'Foo'})
-    //videoOverlay.setUpOverlay();
-
     document.getElementsByClassName("player-name noborder noanimate")[0].remove();
     document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
     document.getElementsByClassName("notification-bar right flexcol")[0].remove();
@@ -117,9 +112,4 @@ Hooks.on('renderCameraViews', (playerList, html) => {
     p.src = "overlayImages/testFrame2.png" 
     p.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;" 
     document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].appendChild(p)
-  
-    // insert a button at the end of this element
-    //loggedInUserListItem.append(
-    //  "<button type='button' class='todo-list-icon-button'><i class='fas fa-tasks'></i></button>"
-    //);
   })
