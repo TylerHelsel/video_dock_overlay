@@ -8,8 +8,47 @@
 
 //Relevant HOOK: renderCameraViews
 
-console.log('video_dock_overlay | Hello World!');
+var overlayPathMap = new Map();
+overlayPathMap.set('X9ngdxbO7P5ao9Hd','overlayImages/testFrame2.png');
+overlayPathMap.set('ndjCA6j9LcRaeCJ7','overlayImages/testFrame.png');
 
+function renderOverlay(cameraList){
+    var usersArray = Array.from(game.users)
+
+    for (let i = 0; i < cameraList.length; i++){
+        var userId = usersArray[i]._id
+        var userQuerySearch = '[data-user=' + '"' + userId + '"]'
+        var currentElement = cameraList[i]
+        var currentElementUser = currentElement.getAttribute("data-user")
+        var overlayPath = overlayPathMap.get(userId)
+        console.log("Generated Data => userId: " + userId + ", currentElementUser: " + currentElementUser + ", overlayPath: " + overlayPath);
+        let imageOverlay = document.createElement("img")
+        imageOverlay.src = overlayPath
+        imageOverlay.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;"
+
+        //build the overlay
+        currentElement.appendChild(imageOverlay)
+    }
+
+    for (let x = 0; x < cameraList.length; x++){
+        cameraList[x].id = "TEST"
+    }
+
+    /*
+    for (let i = 0; i < cameraList.length; i++){
+        console.log(cameraList[i].getAttribute("data-user"))
+    }
+    */
+
+    //console.log(cameraList[i].children[1])
+    //var testList = cameraGrid.querySelectorAll('[data-user="X9ngdxbO7P5ao9Hd"]')
+    //var input = '[data-user=' + '"X9ngdxbO7P5ao9Hd"]' 
+    //console.log(cameraGrid.querySelector(input))
+}
+
+
+``
+/*
 function renderOverlay(listOfPlayers){
     let p = document.createElement("img")
     p.src = "overlayImages/testFrame2.png" 
@@ -59,6 +98,7 @@ function renderOverlay(listOfPlayers){
         }
     }
 }
+*/
 
 class VideoOverlay {
     //This must match the name in module.json
@@ -153,8 +193,9 @@ class videoOverlayData{
 }
 
 Hooks.on('renderCameraViews', (playerList, html) => {
-    var listOfPlayers = Array.from(game.users.keys())
-    renderOverlay(listOfPlayers);
+    var cameraGrid = document.getElementsByClassName("camera-grid")[0]
+    var cameraList = cameraGrid.children
+    renderOverlay(cameraList);
     /*
     document.getElementsByClassName("player-name noborder noanimate")[0].remove();
     document.getElementsByClassName("notification-bar right flexcol")[0].remove();
