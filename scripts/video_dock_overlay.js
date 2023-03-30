@@ -24,10 +24,8 @@ overlayPathMap.set('39aWYLAlEFvZAWrl','overlayImages/Lindy.png');
 //GM
 overlayPathMap.set('Ez4DQ6WuWb7af6kM','overlayImages/Gamemaster.png');
 
-function renderOverlay(){
-    var cameraGrid = document.getElementsByClassName("camera-grid")[0]
-    var cameraList = cameraGrid.children
-
+function renderOverlay(cameraList){
+    
     for (let i = 0; i < cameraList.length; i++){
         //var userQuerySearch = '[data-user=' + '"' + userId + '"]'
         var currentElement = cameraList[i]
@@ -139,11 +137,11 @@ class videoOverlayData{
     };
 }
 
-//Hooks.on('renderCameraViews', (playerList, html) => {
-//    var cameraGrid = document.getElementsByClassName("camera-grid")[0]
-//    var cameraList = cameraGrid.children
-//    renderOverlay(cameraList);
-//  })
+Hooks.on('renderCameraViews', (playerList, html) => {
+    var cameraGrid = document.getElementsByClassName("camera-grid")[0]
+    var cameraList = cameraGrid.children
+    renderOverlay(cameraList);
+  })
 
 
  
