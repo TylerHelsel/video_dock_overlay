@@ -43,18 +43,18 @@ function renderOverlay(cameraList){
         let notificationBar = currentElement.getElementsByClassName("notification-bar right flexcol")
         let shadow = currentElement.getElementsByClassName("shadow")[0]
         let cameraBox = currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0]
-        if (playerName != NULL){
+        if (playerName != null){
             playerName.remove();
-        }else if (playerName2 != NULL){
+        }else if (playerName2 != null){
             playerName2.remove();
         }
-        if (notificationBar != NULL){
+        if (notificationBar != null){
             notificationBar.remove();
         }
-        if (shadow != NULL){
+        if (shadow != null){
             shadow.remove();
         }
-        if (cameraBox != NULL){
+        if (cameraBox != null){
             cameraBox.style.padding = "0"
         }
         //currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
