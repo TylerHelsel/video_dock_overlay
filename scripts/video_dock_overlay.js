@@ -38,10 +38,22 @@ function renderOverlay(cameraList){
 
         //build the overlay
         currentElement.appendChild(imageOverlay)
-        currentElement.getElementsByClassName("player-name noborder noanimate")[0].remove();
+        if (currentElement.getElementsByClassName("player-name noborder noanimate")[0] != 'undefined'){
+            currentElement.getElementsByClassName("player-name noborder noanimate")[0].remove();
+        }else if (currentElement.getElementsByClassName("player-name noborder ")[0] != 'undefined'){
+            currentElement.getElementsByClassName("player-name noborder ")[0].remove();
+        }
+        if (currentElement.getElementsByClassName("notification-bar right flexcol")[0] != 'undefined'){
+            currentElement.getElementsByClassName("notification-bar right flexcol")[0].remove();
+        }
+        if (currentElement.getElementsByClassName("shadow")[0] != 'undefined'){
+            currentElement.getElementsByClassName("shadow")[0].remove();
+        }
+        if (currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0] != 'undefined'){
+            currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0"
+        }
         //currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
-        currentElement.getElementsByClassName("notification-bar right flexcol")[0].remove();
-        currentElement.getElementsByClassName("shadow")[0].remove();
+
     }
 }
 
