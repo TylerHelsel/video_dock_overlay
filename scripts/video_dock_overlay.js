@@ -24,8 +24,9 @@ overlayPathMap.set('39aWYLAlEFvZAWrl','overlayImages/Lindy.png');
 //GM
 overlayPathMap.set('Ez4DQ6WuWb7af6kM','overlayImages/Gamemaster.png');
 
-function renderOverlay(cameraList){
-    //var usersArray = Array.from(game.users)
+function renderOverlay(){
+    var cameraGrid = document.getElementsByClassName("camera-grid")[0]
+    var cameraList = cameraGrid.children
 
     for (let i = 0; i < cameraList.length; i++){
         //var userQuerySearch = '[data-user=' + '"' + userId + '"]'
@@ -39,14 +40,10 @@ function renderOverlay(cameraList){
 
         //build the overlay
         currentElement.appendChild(imageOverlay)
-        //currentElement.getElementsByClassName("player-name noborder noanimate")[0].remove();
-        //currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
-        //currentElement.getElementsByClassName("notification-bar right flexcol")[0].remove();
-        //currentElement.getElementsByClassName("shadow")[0].remove();
-    }
-
-    for (let x = 0; x < cameraList.length; x++){
-        cameraList[x].id = "TEST"
+        currentElement.getElementsByClassName("player-name noborder noanimate")[0].remove();
+        currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
+        currentElement.getElementsByClassName("notification-bar right flexcol")[0].remove();
+        currentElement.getElementsByClassName("shadow")[0].remove();
     }
 }
 
@@ -142,11 +139,11 @@ class videoOverlayData{
     };
 }
 
-Hooks.on('renderCameraViews', (playerList, html) => {
-    var cameraGrid = document.getElementsByClassName("camera-grid")[0]
-    var cameraList = cameraGrid.children
-    renderOverlay(cameraList);
-  })
+//Hooks.on('renderCameraViews', (playerList, html) => {
+//    var cameraGrid = document.getElementsByClassName("camera-grid")[0]
+//    var cameraList = cameraGrid.children
+//    renderOverlay(cameraList);
+//  })
 
 
  
