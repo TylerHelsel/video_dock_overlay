@@ -25,15 +25,14 @@ overlayPathMap.set('39aWYLAlEFvZAWrl','overlayImages/Lindy.png');
 overlayPathMap.set('Ez4DQ6WuWb7af6kM','overlayImages/Gamemaster.png');
 
 function renderOverlay(cameraList){
-    var usersArray = Array.from(game.users)
+    //var usersArray = Array.from(game.users)
 
     for (let i = 0; i < cameraList.length; i++){
-        var userId = usersArray[i]._id
-        var userQuerySearch = '[data-user=' + '"' + userId + '"]'
+        //var userQuerySearch = '[data-user=' + '"' + userId + '"]'
         var currentElement = cameraList[i]
         var currentElementUser = currentElement.getAttribute("data-user")
-        var overlayPath = overlayPathMap.get(userId)
-        console.log("Generated Data => userId: " + userId + ", currentElementUser: " + currentElementUser + ", overlayPath: " + overlayPath);
+        var overlayPath = overlayPathMap.get(currentElementUser)
+        console.log("Generated Data => userId: " + currentElementUser + ", currentElementUser: " + currentElementUser + ", overlayPath: " + overlayPath);
         let imageOverlay = document.createElement("img")
         imageOverlay.src = overlayPath
         imageOverlay.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;"
