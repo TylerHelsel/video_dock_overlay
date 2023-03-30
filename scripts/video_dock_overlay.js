@@ -9,8 +9,20 @@
 //Relevant HOOK: renderCameraViews
 
 var overlayPathMap = new Map();
-overlayPathMap.set('X9ngdxbO7P5ao9Hd','overlayImages/testFrame2.png');
-overlayPathMap.set('ndjCA6j9LcRaeCJ7','overlayImages/testFrame.png');
+//Knoth
+overlayPathMap.set('NFQMwQX34Hics750','overlayImages/Knoth.png');
+//Sera
+overlayPathMap.set('El9jXCuYQTHBld0A','overlayImages/Seraphina.png');
+//Quofire
+overlayPathMap.set('6qTV7EyAAvg9xC1C','overlayImages/Quofire.png');
+//Roscoe
+overlayPathMap.set('1gmDxquStNadlnxX','overlayImages/Roscoe.png');
+//Ryfinii
+overlayPathMap.set('1sNf9dQE43swHYtn','overlayImages/Ryfinii.png');
+//Lindy
+overlayPathMap.set('39aWYLAlEFvZAWrl','overlayImages/Lindy.png');
+//GM
+overlayPathMap.set('Ez4DQ6WuWb7af6kM','overlayImages/Gamemaster.png');
 
 function renderOverlay(cameraList){
     var usersArray = Array.from(game.users)
@@ -33,72 +45,7 @@ function renderOverlay(cameraList){
     for (let x = 0; x < cameraList.length; x++){
         cameraList[x].id = "TEST"
     }
-
-    /*
-    for (let i = 0; i < cameraList.length; i++){
-        console.log(cameraList[i].getAttribute("data-user"))
-    }
-    */
-
-    //console.log(cameraList[i].children[1])
-    //var testList = cameraGrid.querySelectorAll('[data-user="X9ngdxbO7P5ao9Hd"]')
-    //var input = '[data-user=' + '"X9ngdxbO7P5ao9Hd"]' 
-    //console.log(cameraGrid.querySelector(input))
 }
-
-
-``
-/*
-function renderOverlay(listOfPlayers){
-    let p = document.createElement("img")
-    p.src = "overlayImages/testFrame2.png" 
-    p.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;" 
-    playerListLength = listOfPlayers.length;
-    for (let i = 0; i < playerListLength; i++) {
-        if (document.getElementsByClassName("camera-view camera-box-dock no-audio")[i] != undefined){
-            if(document.getElementsByClassName("player-name noborder noanimate")[0] != undefined){
-                document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-            }else if(document.getElementsByClassName("player-name noborder")[0] != undefined){
-                document.getElementsByClassName("player-name noborder")[0].remove();
-            }    
-            document.getElementsByClassName("notification-bar right flexcol")[0].remove();
-            document.getElementsByClassName("shadow")[0].remove();
-            document.getElementsByClassName("camera-view camera-box-dock no-audio")[i].style.padding = "0" 
-            document.getElementsByClassName("camera-view camera-box-dock no-audio")[i].appendChild(p)
-        }else if (document.getElementsByClassName("camera-view camera-box-popout no-audio")[i] != undefined){
-            if(document.getElementsByClassName("player-name noborder noanimate")[0] != undefined){
-                document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-            }else if(document.getElementsByClassName("player-name noborder")[0] != undefined){
-                document.getElementsByClassName("player-name noborder")[0].remove();
-            }
-            document.getElementsByClassName("notification-bar right flexcol")[0].remove();
-            document.getElementsByClassName("shadow")[0].remove();
-            document.getElementsByClassName("camera-view camera-box-popout no-audio")[i].style.padding = "0"
-            document.getElementsByClassName("camera-view camera-box-popout no-audio")[i].appendChild(p)
-        }else if (document.getElementsByClassName("camera-view camera-box-popout no video no-audio")[i] != undefined){
-            if(document.getElementsByClassName("player-name noborder noanimate")[0] != undefined){
-                document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-            }else if(document.getElementsByClassName("player-name noborder")[0] != undefined){
-                document.getElementsByClassName("player-name noborder")[0].remove();
-            }
-            document.getElementsByClassName("notification-bar right flexcol")[0].remove();
-            document.getElementsByClassName("shadow")[0].remove();
-            document.getElementsByClassName("camera-view camera-box-popout no video no-audio")[i].style.padding = "0"
-            document.getElementsByClassName("camera-view camera-box-popout no video no-audio")[i].appendChild(p)
-        }else if (document.getElementsByClassName("camera-view camera-box-dock no video no-audio")[i] != undefined){
-            if(document.getElementsByClassName("player-name noborder noanimate")[0] != undefined){
-                document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-            }else if(document.getElementsByClassName("player-name noborder")[0] != undefined){
-                document.getElementsByClassName("player-name noborder")[0].remove();
-            }
-            document.getElementsByClassName("notification-bar right flexcol")[0].remove();
-            document.getElementsByClassName("shadow")[0].remove();
-            document.getElementsByClassName("camera-view camera-box-dock no video no-audio")[i].style.padding = "0"
-            document.getElementsByClassName("camera-view camera-box-dock no video no-audio")[i].appendChild(p)
-        }
-    }
-}
-*/
 
 class VideoOverlay {
     //This must match the name in module.json
@@ -196,27 +143,7 @@ Hooks.on('renderCameraViews', (playerList, html) => {
     var cameraGrid = document.getElementsByClassName("camera-grid")[0]
     var cameraList = cameraGrid.children
     renderOverlay(cameraList);
-    /*
-    document.getElementsByClassName("player-name noborder noanimate")[0].remove();
-    document.getElementsByClassName("notification-bar right flexcol")[0].remove();
-    document.getElementsByClassName("shadow")[0].remove();
-
-    let p = document.createElement("img")
-    p.src = "overlayImages/testFrame2.png" 
-    p.style = "position: absolute;top: 0;width: 100%;height: 100%;left: 0;margin: auto;" 
-
-    if (document.getElementsByClassName("camera-view camera-box-dock no-audio")[0] != undefined){
-        document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
-        document.getElementsByClassName("camera-view camera-box-dock no-audio")[0].appendChild(p)
-    }else if (document.getElementsByClassName("camera-view camera-box-popout no-audio")[0] != undefined){
-        document.getElementsByClassName("camera-view camera-box-popout no-audio")[0].style.padding = "0"
-        document.getElementsByClassName("camera-view camera-box-popout no-audio")[0].appendChild(p)
-    } 
-    */   
   })
 
-//Hooks.on('pf2e.systemReady', (playerList, html) => {
-//    listOfPlayers = Array.from(game.users.keys())
-//})
 
  
