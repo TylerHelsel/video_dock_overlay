@@ -38,19 +38,24 @@ function renderOverlay(cameraList){
 
         //build the overlay
         currentElement.appendChild(imageOverlay)
-        if (currentElement.getElementsByClassName("player-name noborder noanimate")[0] != "undefined"){
-            currentElement.getElementsByClassName("player-name noborder noanimate")[0].remove();
-        }else if (currentElement.getElementsByClassName("player-name noborder ")[0] != "undefined"){
-            currentElement.getElementsByClassName("player-name noborder ")[0].remove();
+        let playerName = currentElement.getElementsByClassName("player-name noborder noanimate")[0]
+        let playerName2 = currentElement.getElementsByClassName("player-name noborder ")[0]
+        let notificationBar = currentElement.getElementsByClassName("notification-bar right flexcol")
+        let shadow = currentElement.getElementsByClassName("shadow")[0]
+        let cameraBox = currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0]
+        if (playerName != NULL){
+            playerName.remove();
+        }else if (playerName2 != NULL){
+            playerName2.remove();
         }
-        if (currentElement.getElementsByClassName("notification-bar right flexcol")[0] != "undefined"){
-            currentElement.getElementsByClassName("notification-bar right flexcol")[0].remove();
+        if (notificationBar != NULL){
+            notificationBar.remove();
         }
-        if (currentElement.getElementsByClassName("shadow")[0] != "undefined"){
-            currentElement.getElementsByClassName("shadow")[0].remove();
+        if (shadow != NULL){
+            shadow.remove();
         }
-        if (currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0] != "undefined"){
-            currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0"
+        if (cameraBox != NULL){
+            cameraBox.style.padding = "0"
         }
         //currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
 
