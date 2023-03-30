@@ -40,6 +40,10 @@ function renderOverlay(cameraList){
 
         //build the overlay
         currentElement.appendChild(imageOverlay)
+        currentElement.getElementsByClassName("player-name noborder noanimate")[0].remove();
+        currentElement.getElementsByClassName("camera-view camera-box-dock no-audio")[0].style.padding = "0" 
+        currentElement.getElementsByClassName("notification-bar right flexcol")[0].remove();
+        currentElement.getElementsByClassName("shadow")[0].remove();
     }
 
     for (let x = 0; x < cameraList.length; x++){
